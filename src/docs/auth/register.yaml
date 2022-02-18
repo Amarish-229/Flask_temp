@@ -5,7 +5,7 @@ tags:
 
 parameters:
   - name: body
-    description: The body should contain the user login credentials
+    description: The body should contain details for registering users
     in: body
     required: true
     schema: 
