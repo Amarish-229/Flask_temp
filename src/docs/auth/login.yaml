@@ -1,0 +1,34 @@
+User Log In
+---
+tags:
+  - Authentication
+
+parameters:
+  - name: body
+    description: The body should contain the user login credentials
+    in: body
+    required: true
+    schema: 
+      type: object
+      required: 
+        - "email"
+        - "password"
+
+      properties:
+        email:
+          type: "email"
+          example: "user@gmail.com"
+        password:
+          type: "string"
+          format: "password"
+          example: "***********"
+
+responses:
+  200:
+    description: successful login attempt
+
+  404:
+    description: User not found
+
+  401:
+    description: A user supplied incorrect credentials

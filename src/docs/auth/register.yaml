@@ -1,0 +1,43 @@
+User Log In
+---
+tags:
+  - Authentication
+
+parameters:
+  - name: body
+    description: The body should contain the user login credentials
+    in: body
+    required: true
+    schema: 
+      type: object
+      required: 
+        - "email"
+        - "password"
+        - "username"
+        - "mobile"
+
+      properties:
+        email:
+          type: "email"
+          example: "user@gmail.com"
+        password:
+          type: "string"
+          format: "password"
+          example: "***********"
+        username:
+          type: "string"
+          example: "Smit Patel"
+        mobile:
+          type: "Integer"
+          description: "Mobile number without prefix"
+          example: 8886665555
+
+responses:
+  201:
+    description: successfully registered
+
+  400:
+    description: username/password too short(data validation error)
+
+  409:
+    description: email is already taken
