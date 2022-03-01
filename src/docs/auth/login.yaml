@@ -25,6 +25,8 @@ parameters:
 
 responses:
   200:
+    content:
+      
     description: successful login attempt
 
   404:
